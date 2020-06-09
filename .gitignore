@@ -1,0 +1,10 @@
+.vscode
+BFM/*
+!BFM/border_index.mat
+!BFM/center.mat
+# examples
+model/*.pb
+output*
+__*
+utils/render/kernels/*
+!utils/render/kernels/rasterize_triangles_kernel_1.so
