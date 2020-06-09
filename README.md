@@ -1,13 +1,6 @@
 # Deep 3d Portrait from a Single Image (CVPR2020)
-This is a tensorflow implementation of the following paper: [Deep 3D Portrait from a Single Image](https://arxiv.org/abs/2004.11598).\
-If you use this code in your research, please cite our paper
+This is a tensorflow implementation of the following paper: [Deep 3D Portrait from a Single Image](https://arxiv.org/abs/2004.11598).
 
-	@inproceedings{xu2020deep,
-        author = {Xu, Sicheng and Yang, Jiaolong and Chen, Dong and Wen, Fang and Deng, Yu and Jia, Yunde and Xin, Tong},
-        title = {Deep 3D Portrait from a Single Image},
-        booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-        year = {2020}
-    }
 ## Highlights
 
 - We propose a two-step geometry learning scheme which first learn 3DMM face reconstruction from single images then learn to estimate hair and ear depth in a stereo setup.
@@ -53,10 +46,19 @@ python step4_save_obj.py
 ```
 
 5. To check the results, see ./output subfolders which contain the results of corresponding steps.
-
+   
 ## Others
 - An image pre-alignment is necessary for face reconstruction. We recommend using [Bulat et al.'s method](https://github.com/1adrianb/2D-and-3D-face-alignment) to get facial landmarks (3D definition). We also need to use the masks of face,  hair and ear as input to the depth estimation network. We recommend using [Lin et al.'s method](https://arxiv.org/pdf/1906.01342.pdf) for semantic segmentation.
 - The face reconstruction code is heavily borrowed from [Deep3DFaceReconstruction](https://github.com/microsoft/Deep3DFaceReconstruction).
 - The [render](utils/render) code is modified from [tf_mesh_render](https://github.com/google/tf_mesh_renderer/tree/ba27ea1798f6ee8d03ddbc52f42ab4241f9328bb). Note that the renderer we complied does not support other tensorflow versions and can only be used on Linux.
-- The manipulation code will not be released for avoiding abusing. If you wanna make a comparison with our method, please use the results in our paper, or you can contact me(xusicheng@bit.edu.cn) for other comparisons.
-  
+- The manipulation code will not be released. If you want to make a comparison with our method, please use the results in our paper, or you can contact me(xusicheng@bit.edu.cn) for more comparisons.
+
+## Citation
+If you find this code helpful for your research, please cite our paper
+
+	@inproceedings{xu2020deep,
+        author = {Xu, Sicheng and Yang, Jiaolong and Chen, Dong and Wen, Fang and Deng, Yu and Jia, Yunde and Xin, Tong},
+        title = {Deep 3D Portrait from a Single Image},
+        booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+        year = {2020}
+    } 
