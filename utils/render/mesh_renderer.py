@@ -220,6 +220,12 @@ def mesh_renderer(vertices,
                   far_clip=10.0,
                   delta_center=0):
     """Renders an input scene using phong shading, and returns an output image.
+    Modified:
+        triangles: 2-D int32 tensor with shape [triangle_count, 3] -> 
+            3-D int32 tensor with shape [batch_size, triangle_count, 3]
+    Add:
+        delta_center: float, 0D tensor, or 1D tensor with shape [batch_size] specifying
+          desired projective center.
 
     Args:
       vertices: 3-D float32 tensor with shape [batch_size, vertex_count, 3]. Each
@@ -379,6 +385,7 @@ def mesh_renderer(vertices,
                                          fov_y, near_clip, far_clip)
 
     clip_space_transforms = tf.matmul(perspective_transforms, camera_matrices)
+
 
     pixel_attributes = rasterize_triangles(
         vertices, vertex_attributes, triangles, clip_space_transforms,
