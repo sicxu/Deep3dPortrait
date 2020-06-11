@@ -1,16 +1,12 @@
 # Deep 3d Portrait from a Single Image (CVPR2020)
-This is a tensorflow implementation of the following paper: [Deep 3D Portrait from a Single Image](https://arxiv.org/abs/2004.11598).
-
-## Highlights
-
-- We propose a two-step geometry learning scheme which first learn 3DMM face reconstruction from single images then learn to estimate hair and ear depth in a stereo setup.
+This is a tensorflow implementation of the following paper: [Deep 3d Portrait from a Single Image](https://arxiv.org/abs/2004.11598). We propose a two-step geometry learning scheme which first learn 3DMM face reconstruction from single images then learn to estimate hair and ear depth in a stereo setup.
 <p align="center"> 
 <img src="images/pipeline.jpg">
 </p>
 
 
 
-- Typical single-image head reconstruction results. Our method can deal with a large variety of face shapes and hair styles, generating high-quality 3D head models. 
+<!-- - Typical single-image head reconstruction results. Our method can deal with a large variety of face shapes and hair styles, generating high-quality 3D head models. 
 <p align="center"> 
 <img src="images/3d_results.jpg">
 </p>
@@ -20,7 +16,7 @@ This is a tensorflow implementation of the following paper: [Deep 3D Portrait fr
 show our synthesized images with altered head poses.
 <p align="center"> 
 <img src="images/pose_manipulation.jpg">
-</p>
+</p> -->
 
 
 ## Getting Started
@@ -54,11 +50,4 @@ python step4_save_obj.py
 - The manipulation code will not be released. If you want to make a comparison with our method, please use the results in our paper, or you can contact me(xusicheng@bit.edu.cn) for more comparisons.
 
 ## Citation
-If you find this code helpful for your research, please cite our paper
-
-	@inproceedings{xu2020deep,
-        author = {Xu, Sicheng and Yang, Jiaolong and Chen, Dong and Wen, Fang and Deng, Yu and Jia, Yunde and Xin, Tong},
-        title = {Deep 3D Portrait from a Single Image},
-        booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-        year = {2020}
-    } 
+If you find this code helpful for your research, please cite our paper.
