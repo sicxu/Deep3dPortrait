@@ -1,8 +1,8 @@
 # Deep 3d Portrait from a Single Image (CVPR2020)
 This is a tensorflow implementation of the following paper: [Deep 3d Portrait from a Single Image](https://arxiv.org/abs/2004.11598). We propose a two-step geometry learning scheme which first learn 3DMM face reconstruction from single images then learn to estimate hair and ear depth in a stereo setup.
-<p align="center"> 
+<!-- <p align="center"> 
 <img src="images/pipeline.jpg">
-</p>
+</p> -->
 
 
 
