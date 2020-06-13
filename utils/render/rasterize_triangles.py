@@ -49,13 +49,19 @@ def rasterize_triangles(vertices, attributes, triangles, projection_matrices,
     NOTE: the rasterizer does no triangle clipping. Triangles that lie outside the
     viewing frustum (esp. behind the camera) may be drawn incorrectly.
 
+    Modified:
+        triangles: 2-D int32 tensor with shape [triangle_count, 3] -> 
+            3-D int32 tensor with shape [batch_size, triangle_count, 3]
+    Add:
+        delta_center: float, 0D tensor, or 1D tensor with shape [batch_size] specifying
+          desired projective center.
     Args:
       vertices: 3-D float32 tensor with shape [batch_size, vertex_count, 3]. Each
           triplet is an xyz position in model space.
       attributes: 3-D float32 tensor with shape [batch_size, vertex_count,
           attribute_count]. Each vertex attribute is interpolated
           across the triangle using barycentric interpolation.
-      triangles: 2-D int32 tensor with shape [triangle_count, 3]. Each triplet
+      triangles: 3-D int32 tensor with shape [batch_size, triangle_count, 3]. Each triplet
           should contain vertex indices describing a triangle such that the
           triangle's normal points toward the viewer if the forward order of the
           triplet defines a clockwise winding of the vertices. Gradients with
@@ -66,6 +72,8 @@ def rasterize_triangles(vertices, attributes, triangles, projection_matrices,
       image_height: int specifying desired output image height in pixels.
       background_value: a 1-D float32 tensor with shape [attribute_count]. Pixels
           that lie outside all triangles take this value.
+      delta_center: float, 0D tensor, or 1D tensor with shape [batch_size] specifying
+          desired projective center.
 
     Returns:
       A 4-D float32 tensor with shape [batch_size, image_height, image_width,
